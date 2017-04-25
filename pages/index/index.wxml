@@ -1,16 +1,17 @@
 <view style="display:none">
   <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.pic}}" bindload="onImageLoad"></image>
 </view>
-<scroll-view scroll-y="true" style="height:100px">
-  <view style="width:100%">
-    <view class="img_item">
+<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+<scroll-view scroll-y="true" style="height:{{scrollH}}px;">  
+  <view style="width:100%;">
+    <view class="img_item_left">
       <view wx:for="{{col1}}" wx:key="id">
         <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"  bindtap="seePic" data-picurl="{{item.pic}}"></image>
       </view>
     </view>
-    <view class="img_item">
+    <view class="img_item_right">
       <view wx:for="{{col2}}" wx:key="id">
-        <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
+        <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"  bindtap="seePic" data-picurl="{{item.pic}}"></image>
       </view>
     </view>
   </view>
